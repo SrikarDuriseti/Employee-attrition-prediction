@@ -1,0 +1,20 @@
+
+library(shiny)
+shinyUI(fluidPage(
+  titlePanel("Predicting employee attrition using Machine Learning"),
+  sidebarLayout(
+    sidebarPanel(
+      fileInput("file","Upload Employee Data File:"), # fileinput() function is used to get the file upload contorl option
+    ),
+    
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Raw Data", tableOutput("tb")),
+        tabPanel("Attrition Prediction", tableOutput("wt"))
+        #tabPanel("Working tab")
+      )
+    )
+    
+  )
+))
+
